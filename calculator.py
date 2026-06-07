@@ -40,7 +40,7 @@ def pembagian(a, b):
 
 """PILIHAN PERHITUNGAN"""
 def pilihan_perhitungan():
-    pilihan = input("Masukkan Pilihan").lower()
+    pilihan = input("Masukkan Pilihan: ").lower()
     if pilihan not in [
         "1", "penjumlahan", "1.penjumlahan",
         "2", "pengurangan", "2.pengurangan",
