@@ -9,7 +9,8 @@ def tampilan_kalkulator():
     print("2.Pengurangan")
     print("3.Perkalian")
     print("4.Pembagian")
-    print("5.Keluar Kalkulator")
+    print("5.history/riwayat menghitung")
+    print("6.Keluar Kalkulator")
 
 
 """INPUT ANGKA"""
@@ -46,22 +47,33 @@ def pilihan_perhitungan():
         "2", "pengurangan", "2.pengurangan",
         "3", "perkalian", "3.perkalian",
         "4", "pembagian", "4.pembagian",
-        "5", "keluar", "5.keluar kalkulator", "keluar kalkulator"
+        "5", "history", "riwayat", "riwayat menghitung", "history/riwayat menghitung",
+        "6", "keluar", "keluar kalkulator"
     ]:
         return None
     return pilihan
 
 
 """TEMPAT MEMPROSES SEMUANYA"""
+history = []
 while True:
     tampilan_kalkulator()
     pilihan = pilihan_perhitungan()
     if pilihan is None:
         print("Pilihan Tidak valid")
         continue
-    if pilihan in ["5", "keluar", "5.keluar kalkulator", "keluar kalkulator"] :
+    if pilihan in ["6", "keluar", "keluar kalkulator"] :
         print("Terimakasih telah memakai kalkulator kami:D")
         break
+    if pilihan in [
+        "5", "history", "riwayat", "riwayat menghitung", "history/riwayat menghitung"
+    ]:
+        if len(history) == 0:
+            print("Belum Ada History/Riwayat Perhitungan")
+        else:
+            for item in history:
+                print(item)
+        continue
     angka = input_angka()
     if angka is None:
         print("ERROR:HARUS MASUKKAN ANGKA!!")
@@ -69,14 +81,18 @@ while True:
     angka1, angka2 = angka
     if pilihan in ["1", "penjumlahan", "1.penjumlahan"] :
         hasil = penjumlahan(angka1, angka2)
+        history.append(f"{angka1} + {angka2} = {hasil}")
     elif pilihan in ["2", "pengurangan", "2.pengurangan"] :
         hasil = pengurangan(angka1, angka2)
+        history.append(f"{angka1} - {angka2} = {hasil}")
     elif pilihan in ["3", "perkalian", "3.perkalian"] :
         hasil = perkalian(angka1, angka2)
+        history.append(f"{angka1} * {angka2} = {hasil}")
     elif pilihan in ["4", "pembagian", "4.pembagian"] :
         hasil = pembagian(angka1, angka2)
         if hasil is None:
             print("ERROR:TIDAK DAPAT MEMBAGI DENGAN NOL")
             continue
+        history.append(f"{angka1} / {angka2} = {hasil}")
     print(f"Hasilnya adalah: {hasil:,.2f}")
     
