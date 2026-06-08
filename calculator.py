@@ -71,8 +71,10 @@ while True:
         if len(history) == 0:
             print("Belum Ada History/Riwayat Perhitungan")
         else:
+            nomor = 1
             for item in history:
-                print(item)
+                print(f"{nomor}. {item}")
+                nomor += 1
         continue
     angka = input_angka()
     if angka is None:
