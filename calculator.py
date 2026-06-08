@@ -10,7 +10,8 @@ def tampilan_kalkulator():
     print("3.Perkalian")
     print("4.Pembagian")
     print("5.history/riwayat menghitung")
-    print("6.Keluar Kalkulator")
+    print("6.hapus history")
+    print("7.keluar kalkulator")
 
 
 """INPUT ANGKA"""
@@ -48,7 +49,8 @@ def pilihan_perhitungan():
         "3", "perkalian", "3.perkalian",
         "4", "pembagian", "4.pembagian",
         "5", "history", "riwayat", "riwayat menghitung", "history/riwayat menghitung",
-        "6", "keluar", "keluar kalkulator"
+        "6", "hapus", "hapus history",
+        "7", "keluar", "keluar kalkulator"
     ]:
         return None
     return pilihan
@@ -62,7 +64,7 @@ while True:
     if pilihan is None:
         print("Pilihan Tidak valid")
         continue
-    if pilihan in ["6", "keluar", "keluar kalkulator"] :
+    if pilihan in ["7", "keluar", "keluar kalkulator"] :
         print("Terimakasih telah memakai kalkulator kami:D")
         break
     if pilihan in [
@@ -76,6 +78,12 @@ while True:
                 print(f"{nomor}. {item}")
                 nomor += 1
             print(f"Total riwayat Perhitungan: {len(history)}")
+        continue
+    if pilihan in [
+        "6", "hapus", "hapus history"
+    ]:
+        history.clear()
+        print("History Berhasil Dihapus!")
         continue
     angka = input_angka()
     if angka is None:
