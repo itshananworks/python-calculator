@@ -48,13 +48,6 @@ This project was created to practice:
 * Error Handling
 * Basic Program Structure
 
-## Future Improvements
-
-* Scientific calculator features
-* Calculation history
-* Graphical User Interface (GUI)
-* Advanced mathematical operations
-
 ## Author
 
 GitHub: @itshananworks
