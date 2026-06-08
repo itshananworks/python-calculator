@@ -75,11 +75,27 @@ while True:
         if len(history) == 0:
             print("Belum Ada History/Riwayat Perhitungan")
         else:
+            jumlah_penjumlahan = 0
+            jumlah_pengurangan = 0
+            jumlah_perkalian = 0
+            jumlah_pembagian = 0
             nomor = 1
             for item in history:
                 print(f"{nomor}. {item}")
                 nomor += 1
-            print(f"Total riwayat Perhitungan: {len(history)}")
+                if "+" in item :
+                    jumlah_penjumlahan += 1
+                elif "-" in item :
+                    jumlah_pengurangan += 1
+                elif "*" in item :
+                    jumlah_perkalian += 1
+                elif "/" in item :
+                    jumlah_pembagian += 1
+            print(f"Total riwayat perhitungan: {len(history)}")
+            print(f"Penjumlahan : {jumlah_penjumlahan}")
+            print(f"Pengurangan : {jumlah_pengurangan}")
+            print(f"Perkalian : {jumlah_perkalian}")
+            print(f"Pembagian : {jumlah_pembagian}")
         continue
     if pilihan in [
         "6", "hapus", "hapus semua", "hapus semua history"
