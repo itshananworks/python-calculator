@@ -75,6 +75,7 @@ while True:
             for item in history:
                 print(f"{nomor}. {item}")
                 nomor += 1
+            print(f"Total riwayat Perhitungan: {len(history)}")
         continue
     angka = input_angka()
     if angka is None:
